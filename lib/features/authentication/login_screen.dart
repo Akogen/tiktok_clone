@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/constants/gaps.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
+import 'package:tiktok_clone/features/authentication/email_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/auth_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,6 +10,14 @@ class LoginScreen extends StatelessWidget {
 
   void onSignUpTap(BuildContext context) {
     Navigator.of(context).pop();
+  }
+
+  void _onEmailTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const EmailScreen(),
+      ),
+    );
   }
 
   @override
@@ -20,9 +29,9 @@ class LoginScreen extends StatelessWidget {
             horizontal: Sizes.size40,
           ),
           child: Column(
-            children: const [
+            children: [
               Gaps.v80,
-              Text(
+              const Text(
                 "Log in to TikTok",
                 style: TextStyle(
                   fontSize: Sizes.size24,
@@ -30,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               Gaps.v20,
-              Text(
+              const Text(
                 "Manage your account, check notification, comment on videos, and more.",
                 style: TextStyle(
                   fontSize: Sizes.size16,
@@ -40,25 +49,28 @@ class LoginScreen extends StatelessWidget {
               ),
               Gaps.v40,
               AuthButton(
-                icon: FaIcon(FontAwesomeIcons.user),
+                icon: const FaIcon(FontAwesomeIcons.user),
                 text: "Use phone / email / username",
+                onTap: () => _onEmailTap(context),
               ),
               Gaps.v16,
               AuthButton(
-                icon: FaIcon(FontAwesomeIcons.facebook),
+                icon: const FaIcon(FontAwesomeIcons.facebook),
                 text: "Continue with Facebook",
+                onTap: () => _onEmailTap(context),
               ),
               Gaps.v16,
               AuthButton(
-                icon: FaIcon(FontAwesomeIcons.google),
+                icon: const FaIcon(FontAwesomeIcons.google),
                 text: "Continue with Google",
+                onTap: () => _onEmailTap(context),
               ),
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey.shade100,
+        color: Colors.grey.shade50,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: Sizes.size32,
