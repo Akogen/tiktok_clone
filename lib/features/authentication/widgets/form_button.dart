@@ -5,9 +5,11 @@ class FormButton extends StatelessWidget {
   const FormButton({
     super.key,
     required this.disabled,
+    required this.buttonTitle,
   });
 
   final bool disabled;
+  final String buttonTitle;
   final int _durationMilliseconds = 200;
 
   @override
@@ -37,8 +39,8 @@ class FormButton extends StatelessWidget {
             fontSize: Sizes.size16,
             fontWeight: FontWeight.w600,
           ),
-          child: const Text(
-            'Next',
+          child: Text(
+            buttonTitle,
             textAlign: TextAlign.center,
           ),
         ),
