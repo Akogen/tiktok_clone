@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/constants/gaps.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
-import 'package:tiktok_clone/features/authentication/email_screen.dart';
+import 'package:tiktok_clone/features/authentication/login_form_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/auth_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,10 +12,26 @@ class LoginScreen extends StatelessWidget {
     Navigator.of(context).pop();
   }
 
-  void _onEmailTap(BuildContext context) {
+  void _onEmailLoginTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const EmailScreen(),
+        builder: (context) => const LoginFormScreen(),
+      ),
+    );
+  }
+
+  void _onAppleLoginTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LoginFormScreen(),
+      ),
+    );
+  }
+
+  void _onGoogleLoginTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LoginFormScreen(),
       ),
     );
   }
@@ -48,22 +64,24 @@ class LoginScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Gaps.v40,
-              AuthButton(
-                icon: const FaIcon(FontAwesomeIcons.user),
-                text: "Use phone / email / username",
-                onTap: () => _onEmailTap(context),
+              GestureDetector(
+                child: AuthButton(
+                  icon: const FaIcon(FontAwesomeIcons.user),
+                  text: "Use email & password",
+                  onTap: () => _onEmailLoginTap(context),
+                ),
               ),
               Gaps.v16,
               AuthButton(
-                icon: const FaIcon(FontAwesomeIcons.facebook),
-                text: "Continue with Facebook",
-                onTap: () => _onEmailTap(context),
+                icon: const FaIcon(FontAwesomeIcons.apple),
+                text: "Continue with Apple",
+                onTap: () => _onAppleLoginTap(context),
               ),
               Gaps.v16,
               AuthButton(
                 icon: const FaIcon(FontAwesomeIcons.google),
                 text: "Continue with Google",
-                onTap: () => _onEmailTap(context),
+                onTap: () => _onGoogleLoginTap(context),
               ),
             ],
           ),
