@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
-import 'package:tiktok_clone/features/onboarding/interests_screen.dart';
+import 'package:tiktok_clone/features/main_navigation/main_navigation_screen.dart';
 
 void main() {
   runApp(const TiktokApp());
 }
 
-class TiktokApp extends StatelessWidget {
+class TiktokApp extends StatefulWidget {
   const TiktokApp({super.key});
 
+  @override
+  State<TiktokApp> createState() => _TiktokAppState();
+}
+
+class _TiktokAppState extends State<TiktokApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +33,7 @@ class TiktokApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      home: const InterestsScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }
