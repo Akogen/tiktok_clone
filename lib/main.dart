@@ -30,7 +30,6 @@ class _TiktokAppState extends State<TiktokApp> {
             fontSize: Sizes.size16 + Sizes.size2,
             fontWeight: FontWeight.w600,
           ),
-          centerTitle: true,
         ),
       ),
       home: const MainNavigationScreen(),
