@@ -53,7 +53,9 @@ class _TutorialScreenState extends State<TutorialScreen> {
       onPanEnd: _onPanEnd,
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: Sizes.size24),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Sizes.size24,
+          ),
           child: SafeArea(
             child: AnimatedCrossFade(
               firstChild: Column(
