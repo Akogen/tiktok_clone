@@ -48,12 +48,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 firstDate: DateTime(1901),
                 lastDate: DateTime(2030),
               );
-              print(date);
+              //print(date);
               final time = await showTimePicker(
                 context: context,
                 initialTime: TimeOfDay.now(),
               );
-              print(time);
+              //print(time);
               final booking = await showDateRangePicker(
                 context: context,
                 firstDate: DateTime(1901),
@@ -68,7 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   );
                 },
               );
-              print(booking);
+              //print(booking);
             },
             subtitle: const Text("I need to know!"),
           ),

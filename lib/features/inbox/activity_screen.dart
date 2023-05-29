@@ -79,8 +79,14 @@ class _ActivityScreenState extends State<ActivityScreen>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    print(_notifications);
+    //print(_notifications);
     return Scaffold(
       appBar: AppBar(
         title: GestureDetector(
