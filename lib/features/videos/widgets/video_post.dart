@@ -47,7 +47,6 @@ class _VideoPostState extends State<VideoPost>
       await _videoPlayerController.setVolume(0);
     }
     _videoPlayerController.addListener(_onVideoChange);
-    _videoPlayerController.addListener(_onVideoChange);
     setState(() {});
   }
 
