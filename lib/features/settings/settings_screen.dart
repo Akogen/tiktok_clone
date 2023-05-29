@@ -50,10 +50,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
               print(date);
               final time = await showTimePicker(
+                context: context,
                 initialTime: TimeOfDay.now(),
               );
               print(time);
               final booking = await showDateRangePicker(
+                context: context,
                 firstDate: DateTime(1901),
                 lastDate: DateTime(2030),
                 builder: (context, child) {
@@ -113,6 +115,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onPressed: () => Navigator.of(context).pop(),
                       child: const Text("Yes"),
                     ),
+                  ],
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text("Log out (iOS / Bottom)"),
+            textColor: Colors.red,
+            onTap: () {
+              showCupertinoModalPopup(
+                context: context,
+                builder: (context) => CupertinoActionSheet(
+                  title: const Text("Are you sure?"),
+                  message: const Text("Please dooooont gooooo"),
+                  actions: [
+                    CupertinoActionSheetAction(
+                      isDefaultAction: true,
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text("Not log out"),
+                    ),
+                    CupertinoActionSheetAction(
+                      isDestructiveAction: true,
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text("Yes plz."),
+                    )
                   ],
                 ),
               );
