@@ -24,7 +24,6 @@ class PersistentTabBar extends SliverPersistentHeaderDelegate {
         labelPadding: const EdgeInsets.symmetric(
           vertical: Sizes.size10,
         ),
-        labelColor: Colors.black,
         tabs: const [
           Padding(
             padding: EdgeInsets.symmetric(
