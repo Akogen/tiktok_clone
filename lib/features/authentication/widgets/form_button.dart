@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
+import 'package:tiktok_clone/utils.dart';
 
 class FormButton extends StatelessWidget {
   const FormButton({
@@ -27,8 +28,11 @@ class FormButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             5,
           ),
-          color:
-              disabled ? Colors.grey.shade300 : Theme.of(context).primaryColor,
+          color: disabled
+              ? isDarkMode(context)
+                  ? Colors.grey.shade800
+                  : Colors.grey.shade300
+              : Theme.of(context).primaryColor,
         ),
         child: AnimatedDefaultTextStyle(
           duration: Duration(
