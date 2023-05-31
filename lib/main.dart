@@ -37,6 +37,7 @@ class _TiktokAppState extends State<TiktokApp> {
         appBarTheme: const AppBarTheme(
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
+          centerTitle: true,
           elevation: 0,
           titleTextStyle: TextStyle(
             color: Colors.black,
@@ -49,9 +50,14 @@ class _TiktokAppState extends State<TiktokApp> {
           unselectedLabelColor: Colors.grey.shade500,
           indicatorColor: Colors.black,
         ),
+        listTileTheme: const ListTileThemeData(
+          iconColor: Colors.black,
+        ),
       ),
       darkTheme: ThemeData(
-        tabBarTheme: const TabBarTheme(indicatorColor: Colors.white),
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Colors.white,
+        ),
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Color(0xFFE9435A),
         ),
@@ -60,6 +66,7 @@ class _TiktokAppState extends State<TiktokApp> {
         scaffoldBackgroundColor: Colors.black,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.grey.shade900,
+          centerTitle: true,
         ),
         primaryColor: const Color(0xFFE9435A),
         bottomAppBarTheme: BottomAppBarTheme(
