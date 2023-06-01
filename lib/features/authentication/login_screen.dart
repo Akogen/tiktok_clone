@@ -93,11 +93,13 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: isDarkMode(context) ? null : Colors.grey.shade50,
+        color: isDarkMode(context)
+            ? Theme.of(context).appBarTheme.backgroundColor
+            : Colors.grey.shade50,
         child: Padding(
           padding: const EdgeInsets.only(
-            top: Sizes.size30,
-            bottom: Sizes.size30,
+            top: Sizes.size32,
+            bottom: Sizes.size32,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
